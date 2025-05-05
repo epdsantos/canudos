@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizador de Canudos</title>
+    <!-- Include Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&family=Pacifico&family=Great+Vibes&family=Dancing+Script&family=Italianno&family=Petit+Formal+Script&family=Sacramento&family=Allura&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Personalize seu Canudo</h1>
+
+    <div id="personalizador">
+        <div id="visualizacao">
+            <img id="canudo-img" src="/static/img/canudo_base.png" alt="Canudo para personalizar">
+            <div id="area-personalizacao">
+                <!-- Wrapper for TEXT 1 interactive element -->
+                <div id="elemento-interativo-texto-1" class="draggable resizable texto-elemento" style="display: none;">
+                    <span id="texto-personalizado-1"></span>
+                    <div class="resizer top-left"></div>
+                    <div class="resizer top-right"></div>
+                    <div class="resizer bottom-left"></div>
+                    <div class="resizer bottom-right"></div>
+                </div>
+                <!-- Wrapper for TEXT 2 interactive element -->
+                <div id="elemento-interativo-texto-2" class="draggable resizable texto-elemento" style="display: none;">
+                    <span id="texto-personalizado-2"></span>
+                    <div class="resizer top-left"></div>
+                    <div class="resizer top-right"></div>
+                    <div class="resizer bottom-left"></div>
+                    <div class="resizer bottom-right"></div>
+                </div>
+                <!-- Wrapper for TEXT 3 interactive element -->
+                <div id="elemento-interativo-texto-3" class="draggable resizable texto-elemento" style="display: none;">
+                    <span id="texto-personalizado-3"></span>
+                    <div class="resizer top-left"></div>
+                    <div class="resizer top-right"></div>
+                    <div class="resizer bottom-left"></div>
+                    <div class="resizer bottom-right"></div>
+                </div>
+                <!-- Wrapper for LOGO 1 interactive element -->
+                <div id="elemento-interativo-logo-1" class="draggable resizable logo-elemento" style="display: none;">
+                    <img id="logo-personalizado-1" src="" alt="Logo personalizado 1">
+                    <div class="resizer top-left"></div>
+                    <div class="resizer top-right"></div>
+                    <div class="resizer bottom-left"></div>
+                    <div class="resizer bottom-right"></div>
+                </div>
+                <!-- Wrapper for LOGO 2 interactive element -->
+                <div id="elemento-interativo-logo-2" class="draggable resizable logo-elemento" style="display: none;">
+                    <img id="logo-personalizado-2" src="" alt="Logo personalizado 2">
+                    <div class="resizer top-left"></div>
+                    <div class="resizer top-right"></div>
+                    <div class="resizer bottom-left"></div>
+                    <div class="resizer bottom-right"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="controles">
+            <h2>Opções de Personalização</h2>
+
+            <label for="cor-canudo">Cor do Canudo:</label>
+            <select id="cor-canudo" name="cor-canudo">
+                <!-- Options -->
+                <option value="Amarelo">Amarelo</option>
+                <option value="Amarelo Fluorescente">Amarelo Fluorescente</option>
+                <option value="Azul Claro">Azul Claro</option>
+                <option value="Azul Royal" selected>Azul Royal</option>
+                <option value="Azul Marinho">Azul Marinho</option>
+                <option value="Azul Tiffany">Azul Tiffany</option>
+                <option value="Bege">Bege</option>
+                <option value="Branco Fosco">Branco Fosco</option>
+                <option value="Branco Brilhante">Branco Brilhante</option>
+                <option value="Cinza">Cinza</option>
+                <option value="Grafite">Grafite</option>
+                <option value="Laranja Claro">Laranja Claro</option>
+                <option value="Laranja Escuro">Laranja Escuro</option>
+                <option value="Laranja Fluorescente">Laranja Fluorescente</option>
+                <option value="Lilás Escuro">Lilás Escuro</option>
+                <option value="Lilás Claro">Lilás Claro</option>
+                <option value="Marfim Fosco">Marfim Fosco</option>
+                <option value="Marfim Brilhante">Marfim Brilhante</option>
+                <option value="Marrom">Marrom</option>
+                <option value="Marsala">Marsala</option>
+                <option value="Preto">Preto</option>
+                <option value="Reciclado">Reciclado</option>
+                <option value="Rosa Claro">Rosa Claro</option>
+                <option value="Rosa Claro Brilhante">Rosa Claro Brilhante</option>
+                <option value="Rosa Pink">Rosa Pink</option>
+                <option value="Rosa Fluorescente">Rosa Fluorescente</option>
+                <option value="Roxo">Roxo</option>
+                <option value="Verde Bandeira">Verde Bandeira</option>
+                <option value="Verde Fluorescente">Verde Fluorescente</option>
+                <option value="Verde Musgo">Verde Musgo</option>
+                <option value="Verde Tiffany">Verde Tiffany</option>
+                <option value="Vermelho">Vermelho</option>
+                <option value="Vinho">Vinho</option>
+            </select>
+
+            <label for="cor-gravacao">Cor da Gravação (Textos):</label>
+            <select id="cor-gravacao" name="cor-gravacao">
+                 <!-- Options -->
+                <option value="Dourado" selected>Dourado</option>
+                <option value="Prata">Prata</option>
+                <option value="Roxo">Roxo</option>
+                <option value="Rosa Pink">Rosa Pink</option>
+                <option value="Preto">Preto</option>
+                <option value="Verde">Verde</option>
+                <option value="Azul">Azul</option>
+            </select>
+
+            <hr>
+            <h3>Textos (máx. 50 caracteres cada)</h3>
+
+            <label for="texto-input-1">Texto 1:</label>
+            <input type="text" id="texto-input-1" name="texto-input-1" placeholder="Digite seu texto aqui" maxlength="50">
+            <button id="apagar-texto-btn-1" class="apagar-btn apagar-texto-btn" title="Apagar Texto 1">Apagar Texto 1</button>
+            <label for="fonte-texto-1">Fonte Texto 1:</label>
+            <select id="fonte-texto-1" name="fonte-texto-1">
+                 <!-- Options -->
+                <option value="Roboto, sans-serif" selected>Roboto</option>
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="'Times New Roman', serif">Times New Roman</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="'Courier New', monospace">Courier New</option>
+                <option value="'Lobster', cursive">Lobster</option>
+                <option value="'Pacifico', cursive">Pacifico</option>
+                <option value="'Great Vibes', cursive">Great Vibes</option>
+                <option value="'Dancing Script', cursive">Dancing Script</option>
+                <option value="'Italianno', cursive">Italianno</option>
+                <option value="'Petit Formal Script', cursive">Petit Formal Script</option>
+                <option value="'Sacramento', cursive">Sacramento</option>
+                <option value="'Allura', cursive">Allura</option>
+                <option value="'Pinyon Script', cursive">Pinyon Script</option>
+                <option value="'Cookie', cursive">Cookie</option>
+            </select>
+
+            <label for="texto-input-2">Texto 2:</label>
+            <input type="text" id="texto-input-2" name="texto-input-2" placeholder="Digite seu texto aqui" maxlength="50">
+            <button id="apagar-texto-btn-2" class="apagar-btn apagar-texto-btn" title="Apagar Texto 2">Apagar Texto 2</button>
+            <label for="fonte-texto-2">Fonte Texto 2:</label>
+            <select id="fonte-texto-2" name="fonte-texto-2">
+                 <!-- Options -->
+                <option value="Roboto, sans-serif" selected>Roboto</option>
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="'Times New Roman', serif">Times New Roman</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="'Courier New', monospace">Courier New</option>
+                <option value="'Lobster', cursive">Lobster</option>
+                <option value="'Pacifico', cursive">Pacifico</option>
+                <option value="'Great Vibes', cursive">Great Vibes</option>
+                <option value="'Dancing Script', cursive">Dancing Script</option>
+                <option value="'Italianno', cursive">Italianno</option>
+                <option value="'Petit Formal Script', cursive">Petit Formal Script</option>
+                <option value="'Sacramento', cursive">Sacramento</option>
+                <option value="'Allura', cursive">Allura</option>
+                <option value="'Pinyon Script', cursive">Pinyon Script</option>
+                <option value="'Cookie', cursive">Cookie</option>
+            </select>
+
+            <label for="texto-input-3">Texto 3:</label>
+            <input type="text" id="texto-input-3" name="texto-input-3" placeholder="Digite seu texto aqui" maxlength="50">
+            <button id="apagar-texto-btn-3" class="apagar-btn apagar-texto-btn" title="Apagar Texto 3">Apagar Texto 3</button>
+            <label for="fonte-texto-3">Fonte Texto 3:</label>
+            <select id="fonte-texto-3" name="fonte-texto-3">
+                 <!-- Options -->
+                <option value="Roboto, sans-serif" selected>Roboto</option>
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="'Times New Roman', serif">Times New Roman</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="'Courier New', monospace">Courier New</option>
+                <option value="'Lobster', cursive">Lobster</option>
+                <option value="'Pacifico', cursive">Pacifico</option>
+                <option value="'Great Vibes', cursive">Great Vibes</option>
+                <option value="'Dancing Script', cursive">Dancing Script</option>
+                <option value="'Italianno', cursive">Italianno</option>
+                <option value="'Petit Formal Script', cursive">Petit Formal Script</option>
+                <option value="'Sacramento', cursive">Sacramento</option>
+                <option value="'Allura', cursive">Allura</option>
+                <option value="'Pinyon Script', cursive">Pinyon Script</option>
+                <option value="'Cookie', cursive">Cookie</option>
+            </select>
+
+            <hr>
+            <h3>Logos/Imagens (JPG/PNG)</h3>
+
+            <label for="logo-upload-1">Logo/Imagem 1:</label>
+            <input type="file" id="logo-upload-1" name="logo-upload-1" accept=".jpg, .jpeg, .png">
+            <button id="apagar-logo-btn-1" class="apagar-btn apagar-logo-btn" title="Apagar Logo 1">Apagar Logo 1</button>
+            <!-- <button id="remover-fundo-btn-1" class="remover-fundo-btn" style="display: none;">Remover Fundo Logo 1</button> -->
+
+            <label for="logo-upload-2">Logo/Imagem 2:</label>
+            <input type="file" id="logo-upload-2" name="logo-upload-2" accept=".jpg, .jpeg, .png">
+            <button id="apagar-logo-btn-2" class="apagar-btn apagar-logo-btn" title="Apagar Logo 2">Apagar Logo 2</button>
+            <!-- <button id="remover-fundo-btn-2" class="remover-fundo-btn" style="display: none;">Remover Fundo Logo 2</button> -->
+
+            <hr>
+            <h2>Seus Dados</h2>
+            <label for="nome-cliente">Nome:</label>
+            <input type="text" id="nome-cliente" name="nome-cliente" required placeholder="Seu nome completo">
+
+            <label for="email-cliente">Email:</label>
+            <input type="email" id="email-cliente" name="email-cliente" required placeholder="seu.email@exemplo.com">
+
+            <div id="confirmacao-area" style="margin-top: 20px;">
+                <input type="checkbox" id="confirmacao-checkbox" name="confirmacao-checkbox" required>
+                <label for="confirmacao-checkbox" style="font-weight: normal; display: inline;">Ao clicar em finalizar, estou de acordo com o layout e aceito que a personalização seja realizada de acordo com o modelo por mim criado.</label>
+            </div>
+
+            <button id="finalizar-btn">Finalizar e Enviar</button>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

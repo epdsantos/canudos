@@ -1,0 +1,393 @@
+/****** General Styles ******/
+
+:root {
+    --primary-color: #0056b3; /* Darker Blue */
+    --secondary-color: #495057; /* Darker Gray */
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #212529;
+    --white: #ffffff;
+    --border-color: #ced4da;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --border-radius: 6px;
+}
+
+body {
+    font-family: var(--font-family-sans-serif);
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+h2, h3 {
+    color: var(--dark-gray);
+    margin-top: 1rem; /* Reduced */
+    margin-bottom: 0.5rem; /* Reduced */
+    font-weight: 500;
+    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 0.25rem; /* Reduced */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--medium-gray);
+    margin: 1rem 0; /* Reduced */
+}
+
+/****** Layout ******/
+
+#personalizador {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+#visualizacao {
+    position: relative;
+    flex: 1 1 60%; /* Takes more space initially */
+    min-width: 300px; /* Minimum width */
+    max-width: 700px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--white);
+    display: flex; /* Center image */
+    align-items: center; /* Center image */
+    justify-content: center; /* Center image */
+}
+
+#canudo-img {
+    display: block;
+    max-width: 100%; /* Ensure image fits */
+    max-height: 80vh; /* Limit height */
+    height: auto;
+    object-fit: contain;
+}
+
+#area-personalizacao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#controles {
+    flex: 1 1 40%; /* Takes less space initially */
+    min-width: 300px; /* Minimum width */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Reduced */
+}
+
+/****** Form Controls ******/
+
+#controles label {
+    font-weight: 500;
+    margin-bottom: 0.1rem; /* Reduced */
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    display: block; /* Ensure label is above input */
+}
+
+#controles select,
+#controles input[type="text"],
+#controles input[type="email"],
+#controles input[type="file"] {
+    padding: 0.5rem 0.75rem; /* Reduced */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--white);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#controles select:focus,
+#controles input[type="text"]:focus,
+#controles input[type="email"]:focus,
+#controles input[type="file"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.25);
+    outline: none;
+}
+
+#controles input[type="file"] {
+    padding: 0.5rem 0.75rem; /* Adjust padding for file input */
+}
+
+/* Style file input button */
+#controles input[type="file"]::file-selector-button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.75rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#controles input[type="file"]::file-selector-button:hover {
+    background-color: var(--medium-gray);
+    border-color: #adb5bd;
+}
+
+
+
+/****** Buttons ******/
+
+#controles button {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#finalizar-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    margin-top: 1rem;
+}
+
+#finalizar-btn:hover {
+    background-color: #004085;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.remover-fundo-btn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-size: 0.85em;
+    padding: 0.5rem 1rem;
+    margin-top: 0.25rem; /* Adjust spacing */
+}
+
+.remover-fundo-btn:hover {
+    background-color: #343a40;
+}
+
+.apagar-btn {
+    width: 30px; /* Fixed width */
+    height: 30px; /* Fixed height */
+    padding: 0; /* Remove padding */
+    font-size: 1em; /* Adjust font size if needed */
+    line-height: 30px; /* Center text vertically */
+    text-align: center; /* Center text horizontally */
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.apagar-btn:hover {
+    background-color: #c0392b;
+}
+
+/****** Interactive Elements (Draggable/Resizable) ******/
+
+.draggable {
+    position: absolute;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    pointer-events: auto;
+    min-width: 30px;
+    min-height: 15px;
+    transition: border-color 0.2s ease;
+}
+
+.draggable:hover {
+    border-color: rgba(0, 86, 179, 0.4);
+}
+
+.draggable.active {
+    cursor: grabbing;
+    border-color: var(--primary-color);
+    border-style: solid;
+    z-index: 1000;
+}
+
+/* Specific styles for text and logo elements */
+.texto-elemento {
+    padding: 2px;
+    z-index: 20;
+}
+
+.texto-elemento span {
+    white-space: nowrap;
+    font-size: 1.5em; /* Initial font size */
+    font-family: var(--font-family-sans-serif); /* Default font */
+    color: gold; /* Default color - will be overridden */
+    /* pointer-events: none; */ /* Removed to test click propagation */
+}
+
+.logo-elemento {
+    z-index: 10;
+}
+
+.logo-elemento img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    /* pointer-events: none; */ /* Removed to test click propagation */
+}
+
+/* Resizer Handles */
+.resizer {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    display: none;
+    pointer-events: auto;
+    z-index: 1001;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.draggable.active .resizer {
+    display: block;
+}
+
+.resizer.top-left { top: -5px; left: -5px; cursor: nwse-resize; }
+.resizer.top-right { top: -5px; right: -5px; cursor: nesw-resize; }
+.resizer.bottom-left { bottom: -5px; left: -5px; cursor: nesw-resize; }
+.resizer.bottom-right { bottom: -5px; right: -5px; cursor: nwse-resize; }
+
+/****** Confirmation Area ******/
+
+#confirmacao-area {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--light-gray);
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--medium-gray);
+}
+
+#confirmacao-area input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+#confirmacao-area label {
+    font-weight: normal;
+    font-size: 0.85em;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+/****** Responsive Design ******/
+
+@media (max-width: 992px) {
+    body {
+        padding: 1rem;
+    }
+    #personalizador {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    #visualizacao {
+        max-width: 100%;
+        flex-basis: auto; /* Reset basis */
+        min-height: 250px; /* Adjust minimum height */
+    }
+
+    #controles {
+        max-width: 100%;
+        flex-basis: auto; /* Reset basis */
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.6em;
+        margin-bottom: 1.5rem;
+    }
+
+    #personalizador {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    #controles select,
+    #controles input[type="text"],
+    #controles input[type="email"],
+    #controles input[type="file"],
+    #controles button {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9em;
+    }
+
+    #controles input[type="file"]::file-selector-button {
+        padding: 0.4rem 0.6rem;
+    }
+
+    .apagar-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8em;
+    }
+
+    #confirmacao-area label {
+        font-size: 0.8em;
+    }
+}
+
